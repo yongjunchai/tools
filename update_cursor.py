@@ -106,7 +106,7 @@ _KERNEL32 = _init_kernel32()
 
 
 def log(msg: str) -> None:
-    ts = datetime.now().isoformat(sep=" ", timespec="milliseconds")
+    ts = datetime.now().isoformat(sep=" ", timespec="microseconds")
     print(f"[{ts}] [update-cursor] {msg}", flush=True)
 
 
