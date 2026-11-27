@@ -17,6 +17,7 @@ import argparse
 from contextlib import contextmanager
 import ctypes
 from ctypes import wintypes
+from datetime import datetime
 import json
 import os
 import platform
@@ -105,7 +106,8 @@ _KERNEL32 = _init_kernel32()
 
 
 def log(msg: str) -> None:
-    print(f"[update-cursor] {msg}", flush=True)
+    ts = datetime.now().isoformat(sep=" ", timespec="milliseconds")
+    print(f"[{ts}] [update-cursor] {msg}", flush=True)
 
 
 def parse_version(v: str) -> tuple[tuple[int, ...], tuple]:
